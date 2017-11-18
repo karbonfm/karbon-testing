@@ -1,0 +1,35 @@
+/**
+ *
+ * Performs an assertion
+ *
+ * @param {object} TEST_Result the result of the test
+ * 
+ *
+ * @module karbon-testing
+ * @see https://github.com/karbonfm/karbon-testing
+ *
+ * @history 2017-06-01, todd@geistinteractive.com, created
+ *
+ */
+
+Let(
+[
+
+json = JSONFormatElements(TEST_Result);
+
+passed = Left( json ;1 ) <> "?";
+$TEST_Assert =  If( IsEmpty($TEST_Assert) ; "it should be valid JSON" ; $TEST_Assert );
+
+testInfo = JSONSetElement("{}";
+	["Type" ; "ValidJSON" ; JSONString];
+	["Result" ; $TEST_Result ; ""]
+
+)
+];
+
+
+Assert._helper ( passed ; testinfo )
+
+
+
+)

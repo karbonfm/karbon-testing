@@ -1,0 +1,32 @@
+/**
+ *
+ * Performs an assertion
+ *
+ * @param {object} TEST_Result the result of the test
+ * 
+ * @module karbon-testing
+ * @see https://github.com/karbonfm/karbon-testing
+ *
+ * @history 2017-06-01, todd@geistinteractive.com, created
+ *
+ */
+
+Let(
+[
+
+passed = GetAsBoolean( JSONGetElement ( TEST_Result ; "errorCode" ) );
+$TEST_Assert =  If( IsEmpty($TEST_Assert) ; "the result should be an error" ; $TEST_Assert );
+
+testInfo = JSONSetElement("{}";
+	["Type" ; "IsError" ; JSONString];
+	["Result" ; $TEST_Result ; ""]
+
+)
+];
+
+
+Assert._helper ( passed ; testinfo )
+
+
+
+)

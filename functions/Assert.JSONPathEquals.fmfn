@@ -1,0 +1,46 @@
+/**
+ *
+ * Performs an assertion
+ *
+ * @param {object} TEST_Result the result of the test
+ * @param {string} path the to test
+ * @param {string} expected result
+ * 
+ *
+ * @module karbon-testing
+ * @see https://github.com/karbonfm/karbon-testing
+ *
+ * @history 2017-06-01, todd@geistinteractive.com, created
+ *
+ */
+
+Let(
+[
+
+actual = JSONGetElement ( TEST_Result ;  path  )  ;
+
+passed = (actual = expected) ;
+
+
+
+$TEST_Assert =  If( IsEmpty($TEST_Assert) ; "should have a path "& Quote(path) &" that returns " & Quote(expected); $TEST_Assert );
+
+testInfo = JSONSetElement("{}";
+	["Type" ; "JSONPathEquals" ; JSONString];
+	["Expected" ; expected ; JSONString ];
+	["Actual" ; actual ; JSONString ];
+	["Result" ; $TEST_Result ; ""]
+
+)
+
+
+
+
+];
+
+
+Assert._helper ( passed ; testinfo )
+
+
+
+)

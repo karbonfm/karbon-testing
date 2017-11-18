@@ -1,0 +1,39 @@
+/**
+ *
+ * Performs an assertion
+ *
+ * @param {object} Expected
+ * @param {object} Actual
+ * 
+ * @private
+ * @module karbon-testing
+ * @see https://github.com/karbonfm/karbon-testing
+ *
+ * @history 2017-06-01, todd@geistinteractive.com, created
+ *
+ */
+
+Let(
+[
+
+
+test = JSONSetElement ( "{}" ;
+
+	["TestScript" ; Get(ScriptName) ; JSONString ];
+	["Group" ; $TEST_Group ; JSONString ];
+	["Subject" ; $TEST_Subject ; JSONString ];
+	["Case" ; $TEST_Case ; JSONString ];
+	["Assert" ; $TEST_Assert ; JSONString ];
+	["Passed" ; passed; JSONBoolean ];
+	[ "Info" ; testInfo ; ""]
+
+);
+
+n = If( IsEmpty($$Tests) ; 0; ValueCount(JSONListValues ( $$Tests ; "" ))  );
+$$Tests  = JSONSetElement(  $$Tests  ; "[" & n & "]"  ;  test  ; "" );
+$TEST_Assert = ""
+];
+
+""
+
+)

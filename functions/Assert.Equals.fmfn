@@ -1,0 +1,32 @@
+/**
+ *
+ * Performs an assertion
+ *
+ * @param {object} Expected
+ * @param {object} Actual
+ * 
+ * @module karbon-testing
+ * @see https://github.com/karbonfm/karbon-testing
+ *
+ * @history 2017-06-01, todd@geistinteractive.com, created
+ *
+ */
+
+Let(
+[
+
+passed = (Expected = Actual);
+testInfo = JSONSetElement("{}";
+	["Type" ; "Equals" ; JSONString];
+	["Expected" ; Expected ; JSONString ];
+	["Actual" ; Actual ; JSONString ];
+	["Result" ; $TEST_Result ; ""]
+)
+];
+
+
+Assert._helper ( passed ; testinfo )
+
+
+
+)

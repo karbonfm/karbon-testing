@@ -1,0 +1,41 @@
+/**
+ *
+ * Performs an assertion
+ *
+ * @param {object} TEST_Result the result of the test
+ * @param {string} Property to test
+ * 
+ *
+ * @module karbon-testing
+ * @see https://github.com/karbonfm/karbon-testing
+ *
+ * @history 2017-06-01, todd@geistinteractive.com, created
+ *
+ */
+
+Let(
+[
+
+passed = JSON.ContainsProperty ( TEST_Result ; Property );
+
+
+
+$TEST_Assert =  If( IsEmpty($TEST_Assert) ; "should have a property " & Quote(Property) ; $TEST_Assert );
+
+testInfo = JSONSetElement("{}";
+	["Type" ; "JSONHasProperty" ; JSONString];
+	["Result" ; $TEST_Result ; ""]
+
+)
+
+
+
+
+];
+
+
+Assert._helper ( passed ; testinfo )
+
+
+
+)
